@@ -3,6 +3,8 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_DIR / "data"
 MANIFEST_PATH = DATA_DIR / "split_manifest.csv"
+RAW_DIR = DATA_DIR / "raw"
+IMAGES_URL = "https://www.robots.ox.ac.uk/~vgg/data/pets/data/images.tar.gz"
 OUTPUT_DIR = PROJECT_DIR / "outputs"
 RESULTS_DIR = PROJECT_DIR / "results"
 CHECKPOINT_PATH = OUTPUT_DIR / "best.pt"

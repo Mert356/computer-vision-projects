@@ -30,6 +30,7 @@ Both images come from the test split.
 
 ```bash
 pip install -r requirements.txt
+python prepare_data.py    # downloads the images (about 790 MB) and sorts them into data/train, data/val and data/test
 python main.py
 ```
 
@@ -54,6 +55,10 @@ Training images get a random crop, horizontal flip and color jitter.
 | Train | 950 | 1994 | 2944 |
 | Validation | 238 | 498 | 736 |
 | Test | 1183 | 2486 | 3669 |
+
+The official Oxford test split is used as the test set. 20% of the official trainval split was held out as
+validation, separately for each breed, with seed 42. The exact split is saved in
+[data/split_manifest.csv](data/split_manifest.csv), so every run uses the same images.
 
 There are about twice as many dogs as cats, so the loss uses `pos_weight = cats / dogs` and the model is selected by
 **balanced accuracy** (the mean of cat and dog recall) instead of plain accuracy.

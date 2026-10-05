@@ -1,5 +1,6 @@
 .venv/
-data/
+data/*
+!data/split_manifest.csv
 outputs/
 *.pt
 *.pth
